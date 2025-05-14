@@ -1,19 +1,21 @@
 public class Classe_Livro {
-    private String isbn;
+    private static int proximoIsbn =1;
+    private int isbn;
     private String titulo;
     private String autor;
     private int ano;
-    private boolean disponivel;
+    private boolean isdisponivel;
     
-    public Classe_Livro(String isbn, String titulo, String autor, int ano){
-        this.isbn = isbn;
+    public Classe_Livro(int isbn, String titulo, String autor, int ano){
+        this.isbn = proximoIsbn++;
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
-        this.disponivel = true;
+        this.isdisponivel = true;
     }
     //Getter e Setter
-    public String getIsbn(){
+    //public int getIsbn(){return this.isbn;}
+    public int getIsbn(){
         return isbn;
     }
     public String getTitulo(){
@@ -25,27 +27,31 @@ public class Classe_Livro {
     public int getAno(){
         return ano;
     }
-    public boolean isDisponivel(){
-        return disponivel;
+    public boolean getisDisponivel(){
+        return isdisponivel;
     }
     //Setter
-    public void setIsbn(String isbn){
-        this.isbn = isbn;
+    
+    //public void set
+//    public void setIsbn(int isbn){
+        //this.isbn = isbn;
+   // }
+    public void setTitulo(String novoTitulo){
+        this.titulo = novoTitulo;
     }
-    public void setTitulo(String titulo){
-        this.titulo = titulo;
+    public void setAutor(String novoAutor){
+        this.autor = novoAutor;
     }
-    public void setAutor(String autor){
-        this.autor = autor;
-    }
-    public void setAno(int ano){
-        this.ano = ano;
+    public void setAno(int novoAno){
+        this.ano = novoAno;
     }
     public void setDisponivel(boolean disponivel){
-        this.disponivel = disponivel;
+        this.isdisponivel = disponivel;
     }
     
-    
+   public void Classe_Livro(){
+       System.out.println("Nome do livro" + this.titulo +  "ISBN" + this.isbn + "Autor" + this.autor +"Ano" + this.ano);
+   }
 }
 
 
